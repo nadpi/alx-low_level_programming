@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-        char lowalphabet = 'a';
+	char lowalphabet = 'a';
 	char upalphabet = 'A';
         int i;
 	int j;
