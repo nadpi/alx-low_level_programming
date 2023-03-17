@@ -16,11 +16,13 @@ int main(void)
                 putchar(lowalphabet);
                 lowalphabet++;
         }
-        for (j = 0; j< 26 ; j++)
+
+        for (j = 0; j < 26 ; j++)
 	{
 		putchar(upalphabet);
 		upalphabet++;
 	}
+
 	putchar('\n');
 	return (0);
 }
