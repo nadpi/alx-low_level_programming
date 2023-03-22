@@ -1,5 +1,2 @@
-#include <stdio.h>
-void print()
-{
-	printf("_putchar\n");
-}
+void _putchar(char x);
+void print_alphabet(void);
