@@ -15,7 +15,7 @@ switch (month)
 	case 2:
 		if (day < 28)
                         day = 31 + day;
-                else if (day == 29)
+                else if (day == 29 && day < 31)
 			day = 30 + day;
 		break;
 	case 3:
