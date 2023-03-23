@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <ctype.h>
 /**
- * _isupper - checks if character is uppercase
- * @c: character wanted to be checked
- * return: upper or not
+ * _isupper -if char is uppercase
+ * @c: type int
+ * Return: Always 0,1 (Success)
  */
 int _isupper(int c)
 {
