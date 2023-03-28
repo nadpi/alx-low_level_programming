@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * puts_half - prints half of a string
  * @str: string
@@ -19,9 +19,9 @@ void puts_half(char *str)
 	{
 	for (j = half; j < i; j++)
 	{
-		printf("%c", str[j]);
+		_putchar('0' + str[j]);
 	}
-	printf("\n");
+	_putchar('\n');
 	}
 	else
 	{
@@ -30,8 +30,8 @@ void puts_half(char *str)
 		n = i - n;
 		for (j = n; j < i; j++)
 		{
-			printf("%c", str[j]);
+			_putchar('0' + str[j]);
 		}
-		printf("\n");
+		_putchar('\n');
 	}
 }
