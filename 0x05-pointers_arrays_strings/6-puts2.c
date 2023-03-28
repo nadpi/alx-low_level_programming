@@ -11,8 +11,12 @@ void puts2(char *str)
 	while (str[i] != '\0')
 	{
 		if (str[i] == '\0' && str[i - 1] == '.')
+			break;
+		else
+		{
 		printf("%c", str[i]);
 		i += 2;
+		}
 	}
 	printf("\n");
 }
