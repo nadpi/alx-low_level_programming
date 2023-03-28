@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * puts2 - prints every other character of a string
  * @str: the string
@@ -14,8 +14,8 @@ void puts2(char *str)
 	}
 	while (length < i)
 	{
-		printf("%c", str[length]);
+		_putchar(str[length]);
 		length += 2;
 	}
-	printf("\n");
+	_putchar('\n');
 }
