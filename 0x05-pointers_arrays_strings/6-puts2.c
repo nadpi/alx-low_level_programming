@@ -6,15 +6,16 @@
  */
 void puts2(char *str)
 {
-	int i = 0;
+	int i = 0, length = 0;
 
-	if (str[i] != '\0' && str[i - 1] != '.')
-	{
 	while (str[i] != '\0')
 	{
-		printf("%c", str[i]);
-		i += 2;
+		i++;
+	}
+	while (length < i)
+	{
+		printf("%c", str[length]);
+		length += 2;
 	}
 	printf("\n");
-	}
 }
