@@ -9,10 +9,10 @@ int _strcmp(char *s1, char *s2)
 	int i = 0, res = 0, k = 0, l = 0;
 
 	while (s1[k] != '\0')
-		k++;
+	{k++; }
 
 	while (s2[l] != '\0')
-		l++;
+	{l++; }
 
 	if (k < l)
 	{
