@@ -10,10 +10,8 @@ int _strcmp(char *s1, char *s2)
 
 	while (s1[k] != '\0')
 	{k++; }
-
 	while (s2[l] != '\0')
 	{l++; }
-
 	if (k < l)
 	{
 	while (i < l)
@@ -21,8 +19,9 @@ int _strcmp(char *s1, char *s2)
 		if (s1[i] == s2[i])
 			i++;
 		else
+		{
 			res = s1[i] - s2[i];
-		return (res);
+			return (res); }
 	}
 	}
 	else
@@ -32,8 +31,9 @@ int _strcmp(char *s1, char *s2)
 		if (s1[i] == s2[i])
 			i++;
 		else
+		{
 			res = s1[i] - s2[i];
-		return (res);
+			return (res); }
 		}
 	}
 	return (0);
