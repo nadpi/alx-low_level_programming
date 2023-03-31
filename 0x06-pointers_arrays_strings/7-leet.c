@@ -20,12 +20,8 @@ char *leet(char *s)
 			if (s[i] == alph[j] || s[i] == capalph[j])
 			{
 				s[i] = leet[j];
-				j++;
 			}
-			else
-			{
-				j++;
-			}
+			j++;
 		}
 		i++;
 	}
