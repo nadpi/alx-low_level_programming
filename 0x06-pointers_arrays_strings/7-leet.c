@@ -7,7 +7,7 @@ char *leet(char *s)
 {
 	char alph[] = {'a', 'e', 'o', 't', 'l'};
 	char capalph[] = {'A', 'E', 'O', 'T', 'L'};
-	char leet[] = {'4', '3', '0', '7, '1'};
+	char leet[] = {'4', '3', '0', '7', '1'};
 
 	int i = 0;
 
