@@ -18,12 +18,14 @@ char *leet(char *s)
 		while (j < 5)
 		{
 			if (s[i] == alph[j] || s[i] == capalph[j])
-				{
-					s[i] = leet[j];
-					j++;
-				}
-			else
+			{
+				s[i] = leet[j];
 				j++;
+			}
+			else
+			{
+				j++;
+			}
 		}
 		i++;
 	}
