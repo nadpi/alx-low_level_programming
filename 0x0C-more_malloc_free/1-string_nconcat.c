@@ -14,37 +14,38 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s1[i] != '\0')
 	{
 		if (s1 == NULL)
-		{
-			i = 0;
 			break;
-		}
 		i++;
 	}
 	while (s2[j] != '\0')
 	{
 		if (s2 == NULL)
-		{
-			j = 0;
 			break;
-		}
 		j++;
 	}
-
 	ar = malloc((i + j + 1) * sizeof(char));
 
 	if (ar == NULL)
 		return (NULL);
-	while (s1[k] != '\0')
+	for (k = 0; s1[k] != '\0'; k++)
 	{
+		if (i == 0)
+		{
+			ar[k] = ' ';
+			k++;
+			break;
+		}
 		ar[k] = s1[k];
-		k++;
 	}
-	while (j > 0 && n != 0)
+	for (l = 0; s2[l] != '\0' && n != 0; l++)
 	{
+		if (j == 0)
+		{
+			ar[k] = ' ';
+			break;
+		}
 		ar[k] = s2[l];
-		l++;
 		k++;
-		j--;
 		n--;
 	}
 	return (ar);
