@@ -10,12 +10,12 @@ char *str_concat(char *s1, char *s2)
 	int i = 0, j = 0, k = 0, l = 0;
 	char *ar;
 
-	while (s1[i] != '\0' || s1[i] != NULL)
+	while (s1[i] != '\0' && s1[i] != NULL)
 	{
 		i++;
 	}
 
-	while (s2[j] != '\0' || s2[j] != NULL)
+	while (s2[j] != '\0' && s2[j] != NULL)
 	{
 		j++;
 	}
@@ -24,12 +24,12 @@ char *str_concat(char *s1, char *s2)
 	if (ar == NULL)
 		return (NULL);
 
-	while (s1[k] != '\0')
+	while (s1[k] != '\0' && s1[k] != NULL)
 	{
 		ar[k] = s1[k];
 		k++;
 	}
-	while (s2[l] != '\0')
+	while (s2[l] != '\0' && s2[l] != NULL)
 	{
 		ar[k] = s2[l];
 		k++;
