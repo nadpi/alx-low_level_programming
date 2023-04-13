@@ -1,6 +1,6 @@
 #include <stdlib.h>
 /**
- * free_frid - frees a 2d array
+ * free_grid - frees a 2d array
  * @grid: grid
  * @height: height
  * Return: 0
