@@ -8,7 +8,9 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	struct dog_t *newdog;
+	struct dog d;
+	struct dog *newdog;
+	newdog = &d;
 
 	newdog->name = name;
 	newdog->age = age;
