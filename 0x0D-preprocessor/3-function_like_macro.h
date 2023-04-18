@@ -1,4 +1,4 @@
 #ifndef __ABS__
 #define __ABS__
-#define ABS(x) ((x) >= (0) ? (x) : (x * -1))
+#define ABS(x) ((x) >= (0) ? (x) : ((x) * (-1)))
 #endif
