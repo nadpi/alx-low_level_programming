@@ -62,10 +62,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	while (s2[l] != '\0' && n != 0)
 	{
-		ar[k++] = s2[l];
+		ar[k] = s2[l];
 		l++;
+		k++;
 		n--;
 	}
-	s[k] = '\0';
+	ar[k] = '\0';
 	return (ar);
 }
