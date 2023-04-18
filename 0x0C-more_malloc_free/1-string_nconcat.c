@@ -1,5 +1,30 @@
 #include <stdlib.h>
 /**
+ * _strcpy - copies a string from src to dest
+ * @src: source
+ * @dest: destination
+ * Return: the pointer to dest
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0, j;
+
+	while (src[i] != '\0')
+	{
+		i++;
+	}
+	for (j = 0; j <= i; j++)
+	{
+		if (j == i)
+		{
+			dest[j] = '\0';
+			break;
+		}
+		dest[j] = src[j];
+	}
+	return (dest);
+}
+/**
  * string_nconcat - concatenates two strings.
  * @s1: string 1
  * @s2: string 2
@@ -12,9 +37,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i = 0, j = 0, k = 0, l = 0;
 
 	if (s1 == NULL)
-		*s1 = ' ';
+		_strcpy(s1, "");
 	if (s2 == NULL)
-		*s2 = ' ';
+		_strcpy(s2, "");
 	while (s1[i] != '\0' && s1 != NULL)
 		i++;
 	while (s2[j] != '\0' && s2 != NULL)
@@ -37,10 +62,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	while (s2[l] != '\0' && n != 0)
 	{
+		k++;
 		ar[k] = s2[l];
 		l++;
-		k++;
 		n--;
 	}
+	s[k] = '\0';
 	return (ar);
 }
