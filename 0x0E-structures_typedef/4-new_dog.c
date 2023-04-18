@@ -11,7 +11,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t d;
 	dog_t *newdog;
-	
+
 	newdog = &d;
 	if (newdog->name && newdog->owner)
 	{
