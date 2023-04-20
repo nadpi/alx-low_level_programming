@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
 	int (*ptr)(int a, int b), result;
 
-	if (argc < 4)
+	if (argc != 4)
 	{
 		exit(98);
 	}
