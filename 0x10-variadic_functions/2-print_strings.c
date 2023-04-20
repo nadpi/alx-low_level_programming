@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <stdio.h>
 /**
  * print_strings - prints strings
  * @n: num of args
@@ -13,16 +14,16 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_start(args, n);
 	for (i = 0; i < n; i++)
 	{
-		int j = 0;
-
-		char *s = va_args(args, char);
-		while (s[j] != '\0')
+		char s = va_arg(args, char);
+		/*while (s[j] != '\0')
 		{
 			if(s)
 				printf("%c", *s);
 			else
 				s[j] == "(nil)";
-		}
+		}*/
+
+		printf("%c", s);
 		if (separator)
 		{
 			if (i < n - 1)
