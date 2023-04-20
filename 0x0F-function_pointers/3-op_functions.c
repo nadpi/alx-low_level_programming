@@ -50,6 +50,6 @@ int op_div(int a, int b)
 int op_mod(int a, int b)
 {
 	if (b == 0)
-		exit (90);
+		exit(90);
 	return (a % b);
 }
