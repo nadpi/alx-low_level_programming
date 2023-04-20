@@ -1,6 +1,12 @@
 #include "3-calc.h"
 #include <stdlib.h>
 #include <stdio.h>
+/**
+ * main - entry point
+ * @argc: arguments
+ * @argv: args vector
+ * Return: 0
+ */
 int main(int argc, char *argv[])
 {
 	int (*ptr)(int a, int b), result;
