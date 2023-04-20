@@ -12,8 +12,9 @@ int main(int argc, char *argv[])
 {
 	int (*ptr)(int a, int b), result;
 
-	if (argc != 4)
+	if (argc < 4)
 	{
+		printf("too short.\n");
 		exit(98);
 	}
 	ptr = get_op_func(argv[2]);
