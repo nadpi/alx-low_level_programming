@@ -3,7 +3,7 @@
 /**
  * print_strings - prints strings
  * @n: num of args
- * @separartor: string between the strings
+ * @separator: string between the strings
  * Return: nothing
  */
 void print_strings(const char *separator, const unsigned int n, ...)
@@ -35,7 +35,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s", s);
 		}
 	}
-	
+
 	printf("\n");
 	va_end(args);
 }
