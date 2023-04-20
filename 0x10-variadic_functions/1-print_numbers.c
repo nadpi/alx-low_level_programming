@@ -26,7 +26,6 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		}
 		else
 		{
-			printf("%d", num);
 			if (i < n - 1)
 				printf(" ");
 		}
