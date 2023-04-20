@@ -14,11 +14,11 @@ int main(int argc, char *argv[])
 
 	if (argc < 4)
 	{
-		exit(90);
+		exit(98);
 	}
 	ptr = get_op_func(argv[2]);
 	if (ptr == NULL)
-		exit(90);
+		exit(99);
 
 	result = ptr(atoi(argv[1]), atoi(argv[3]));
 	printf("%d\n", result);
