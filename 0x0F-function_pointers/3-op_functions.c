@@ -1,3 +1,4 @@
+#include <stdlib.h>
 /**
  * op_add - adds 2 nums
  * @a: num1
@@ -36,6 +37,8 @@ int op_mul(int a, int b)
  */
 int op_div(int a, int b)
 {
+	if (b == 0)
+		exit(90);
 	return (a / b);
 }
 /**
@@ -46,5 +49,7 @@ int op_div(int a, int b)
  */
 int op_mod(int a, int b)
 {
+	if (b == 0)
+		exit (90);
 	return (a % b);
 }
