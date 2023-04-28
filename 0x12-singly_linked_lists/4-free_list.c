@@ -6,10 +6,10 @@
 */
 void free_list(list_t *head)
 {
-	if (head)
+	while(head)
 	{
+	head = head->next;
 	free(head->str);
-	free(head->next);
 	free(head);
 	}
 }
