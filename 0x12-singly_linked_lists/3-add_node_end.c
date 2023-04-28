@@ -13,6 +13,7 @@ list_t *add_node_end(list_t **head, const char *str)
 
 	if (!newnode || !str)
 	{
+		free(newnode);
 		return (NULL);
 	}
 	while (str[i] != '\0')
