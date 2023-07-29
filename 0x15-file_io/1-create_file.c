@@ -14,7 +14,10 @@ int create_file(const char *filename, char *text_content)
 	if (filename == NULL)
 		return (-1);
 
-	fp = open(filename, O_CREAT | O_WRONLY | O_TRUNC, mode);
+	if (text_content == NULL)
+		fp = open(filename, O_CREAT | O_WRONLY | O_TRUNC, mode);
+	else
+		fp = open(filename, O_CREAT | O_WRONLY | O_TRUNC, mode);
 
 	if (fp == -1)
 		return (-1);
@@ -26,8 +29,7 @@ int create_file(const char *filename, char *text_content)
 	if (letters == -1)
 		return (-1);
 	}
-	else
-		letters = write(fp, "", 0);
+
 	close(fp);
 	return (1);
 }
