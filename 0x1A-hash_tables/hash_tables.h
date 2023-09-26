@@ -1,5 +1,6 @@
 #ifndef hash
 #define hash
+#include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 /**
