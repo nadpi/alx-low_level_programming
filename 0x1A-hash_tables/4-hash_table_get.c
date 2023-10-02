@@ -16,5 +16,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (!ht->array[idx])
 		return (NULL);
 	else
-		return (ht->array[idx]->value);
+	{
+		if (strcmp(item->key, key) == 0)
+			return (ht->array[idx]->value);
+	}
 }
