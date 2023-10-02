@@ -19,10 +19,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	newnode->key = malloc(strlen(key) + 1);
 	if (!newnode->key)
+	{
+		free (newnode);
 		return (0);
+	}
 	newnode->value = malloc(strlen(value) + 1);
 	if (!newnode->value)
+	{
+		free (newnode->key);
+		free(newnode);
 		return (0);
+	}
 
 	strcpy(newnode->key, key);
 	newnode->value = strdup(value);
