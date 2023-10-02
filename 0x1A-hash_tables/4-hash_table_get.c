@@ -8,17 +8,19 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	int idx;
+	hash_node_t *curr;
 
 	if (!ht || !key)
 		return (NULL);
 
 	idx = hash_djb2((const unsigned char *)key) % ht->size;
-	if (!ht->array[idx])
-		return (NULL);
-	else
+	curr = ht->array[idx];
+
+	while (curr)
 	{
-		if (strcmp(ht->array[idx]->key, key) == 0)
-			return (ht->array[idx]->value);
+		if (strcmp(key, curr->key) == 0)
+			return (curr->value);
+		curr = curr->next;
 	}
 	return (NULL);
 }
