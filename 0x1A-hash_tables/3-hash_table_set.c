@@ -33,7 +33,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[idx] = newnode;
 	else
 	{
-		ht->array[idx]->value = newnode->value;
+		ht->array[idx] = newnode;
 	}
 	return (1);
 }
