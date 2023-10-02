@@ -33,8 +33,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[idx] = newnode;
 	else
 	{
-	newnode->next = ht->array[idx];
-	ht->array[idx] = newnode;
+		if (strcmp(newnode->key, ht->array[idx]->key) == 0)
+		{
+			free(ht->array[idx]->value);
+			free(ht->array[idx]->key);
+			free(ht->array[idx]);
+		}
+		else
+		{
+		newnode->next = ht->array[idx];
+		}
+		ht->array[idx] = newnode;
 	}
 	return (1);
 }
