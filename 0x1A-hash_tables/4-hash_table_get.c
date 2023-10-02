@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 /**
- * hash_tables_get - retrieves a value associated wih a key
+ * hash_table_get - retrieves a value associated wih a key
  * @ht: hash table
  * @key: key
  * Return: the value or NULL
@@ -8,7 +8,7 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	int idx;
-	
+
 	if (!ht || !key)
 		return (NULL);
 
