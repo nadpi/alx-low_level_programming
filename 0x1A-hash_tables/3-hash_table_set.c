@@ -9,24 +9,32 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	int idx;
-	struct hash_node_s *newnode = malloc(sizeof(struct hash_node_s)), *curr;
+	hash_node_t *newnode, *curr;
 
-	if (!newnode || !key || !value)
+	if (!ht || !key)
 		return (0);
 
+	newnode = malloc(sizeof(hash_node_t));
+	if (!newnode)
+		return (0);
+	newnode->key = malloc(strlen(key) + 1);
+	if (!newnode->key)
+		return (0);
+	newnode->value = malloc(strlen(value) + 1);
+	if (!newnode->value)
+		 return (0);
+
+	strcpy(newnode->key, key);
+	newnode->value = strdup(value);
 	idx = hash_djb2((const unsigned char *)key) % ht->size;
 	curr = ht->array[idx];
-	strcpy(newnode->value, value);
-	strcpy(newnode->key, key);
 
-	if (!curr)
+	if (curr == NULL)
 		ht->array[idx] = newnode;
 	else
 	{
-	newnode->next = ht->array[0];
-	ht->array[0] = newnode;
+		newnode->next = ht->array[idx];
+		ht->array[idx] = newnode;
 	}
-
 	return (1);
-
 }
