@@ -12,7 +12,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int idx;
 	char *dub;
 
-	if (!key || key[0] == '\0')
+	if (!key)
 		return (0);
 
 	node = malloc(sizeof(hash_node_t));
@@ -21,7 +21,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	idx = hash_djb2((const unsigned char *)key) % ht->size;
 	node->key = malloc(strlen(key) + 1);
-	node->value = malloc(strlen(value) + 1);
 
 	if (!node->key || !node->value)
 		return (0);
