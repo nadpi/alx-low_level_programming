@@ -32,11 +32,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (ht->array[idx])
 	{
+		node->next = ht->array[0];
 		ht->array[0]->next = node;
 	}
 	else
 	{
-		node->next = ht->array[idx];
 		ht->array[idx] = node;
 	}
 	return (1);
