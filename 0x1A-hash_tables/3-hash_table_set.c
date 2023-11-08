@@ -23,21 +23,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->key = malloc(strlen(key) + 1);
 	node->value = malloc(strlen(value) + 1);
 
-	if (!node->key || !node->value)
+	if (!node->key)
 		return (0);
 
 	strcpy(node->key, key);
+	if (value)
+	{
 	dub = strdup(value);
 	strcpy(node->value, dub);
-
-	if (!ht->array[idx])
-	{
-		ht->array[idx] = node;
 	}
 	else
-	{
-		node->next = ht->array[idx];
-		ht->array[idx] = node;
-	}
+		node->value = NULL;
+
+	node->next = ht->array[idx];
+	ht->array[idx] = node;
 	return (1);
 }
