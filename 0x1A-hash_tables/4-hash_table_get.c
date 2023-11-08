@@ -9,10 +9,20 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int idx;
+	hash_node_t *node;
 
 	idx = hash_djb2((const unsigned char *)key) % ht->size;
+	node = ht->array[idx];
+
 	if (!ht->array[idx])
 		return (NULL);
 	else
-		return (ht->array[idx]->value);
+	{
+		while (node != NULL)
+		{
+			if (strcmp(node->key, key) == 0)
+				return (node->value);
+			node = node->next;
+		}
+	}
 }
