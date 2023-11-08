@@ -30,18 +30,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	dub = strdup(value);
 	strcpy(node->value, dub);
 
-	for (node = ht->array[idx]; node != NULL; node = node->next)
+	if (!ht->array[idx])
 	{
-		if (strcmp(node->key, key) == 0)
-		{
-            		free(node->value);
-			if (!dub)
-			return (0);
-			node->value = dub;
-			return (1);
-		}
+		ht->array[idx] = node;
 	}
-
-	ht->array[idx] = node;
+	else
+	{
+		node->next = ht->array[idx];
+		ht->array[idx] = node;
+	}
 	return (1);
 }
