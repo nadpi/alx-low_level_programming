@@ -1,13 +1,4 @@
 all: program
 
 program: main.o school.o
-	g++ -c main.c school.c
-
-main.o: main.c m.h
-	g++ -c main.c
-
-school.o: school.c
-	g++ -c school.c
-
-clean: 
-	rm *.o program
+	gcc main.c school.c -o school
