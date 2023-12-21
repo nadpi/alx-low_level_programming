@@ -4,6 +4,6 @@ program: $(OBJ)
 	$(CC) $(SRC) -o $(NAME)
 
 CC = gcc
-SRC = main.c school.c
+SRC = *.c
 OBJ = $(SRC:.c=.o)
 NAME = school
