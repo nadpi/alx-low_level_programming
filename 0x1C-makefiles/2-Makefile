@@ -1,6 +1,6 @@
-all: school
+all: program
 
-school: $(OBJ)
+program: 
 	$(CC) $(SRC) -o $(NAME)
 
 CC = gcc
