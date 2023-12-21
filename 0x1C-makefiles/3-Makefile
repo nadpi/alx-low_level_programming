@@ -13,7 +13,7 @@ fclean:
 	$(RM) *.c *.o *~
 
 re:
-	$(CC) $(SRC) -c $(OBJ)
+	$(CC) $(SRC) -o $(NAME)
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
