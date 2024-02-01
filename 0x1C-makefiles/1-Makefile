@@ -1,7 +1,0 @@
-all: program
-
-program: main.o school.o
-	$(CC) $(SRC) -o school
-
-CC = gcc
-SRC = main.c school.c

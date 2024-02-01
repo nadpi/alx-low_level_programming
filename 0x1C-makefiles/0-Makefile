@@ -1,4 +1,0 @@
-all: program
-
-program: main.o school.o
-	gcc main.c school.c -o school
