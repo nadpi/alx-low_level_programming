@@ -7,21 +7,16 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int i, cnt = 0;
-	unsigned long int num = n, mod;
+	unsigned int cnt = 0;
 
 	while (n > 0)
 	{
+		if (index == cnt)
+		{
+			return (n & 1);
+		}
 		n = n >> 1;
 		cnt++;
 	}
-	if (index > cnt - 1)
-		return (-1);
-
-	for (i = 0; i <= index; i++)
-	{
-		mod = num % 2;
-		num /= 2;
-	}
-	return ((int)mod);
+	return (-1);
 }
