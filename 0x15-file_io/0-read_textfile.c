@@ -23,18 +23,20 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fp = open(filename, O_RDONLY);
 	if (fp == -1)
 	{
-		return (0);
-	}
-
-	i = read(fp, str, letters);
-	if (i <= 0)
-	{
 		free(str);
 		return (0);
 	}
 
+	i = read(fp, str, letters);
+	if (i == -1)
+	{
+		free(str);
+		close(fp);
+		return (0);
+	}
+
 	j = write(STDOUT_FILENO, str, i);
-	if (j != i)
+	if (j != i || j == -1)
 	{
 		return (0);
 	}
