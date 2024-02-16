@@ -8,7 +8,7 @@
 int main(int ac, char **av)
 {
 	int fp, i, ft;
-	char *str;
+	char buffer[1024];
 	ssize_t j;
 
 	if (ac != 3)
@@ -16,10 +16,6 @@ int main(int ac, char **av)
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit (97);
 	}
-
-	str = malloc(1024 * sizeof(char));
-	if (!str)
-		exit (97);
 
 	fp = open(av[1], O_RDONLY);
 	if (fp == -1)
@@ -45,13 +41,21 @@ int main(int ac, char **av)
 	}
 
 	j = write(ft, str, 1024);
-	if (j == -1)
+	if (j == -1 || j != i)
 	{
 		dprintf(2, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
 
-	close(fp);
-	close(ft);
+	if (close(fp) == -1)
+	{
+		dprintf(2, "Error: Can't close fd %d\n", fp);
+		exit(100);
+	}
+	if (close(ft) == -1)
+	{
+		dprintf(2, "Error: Can't close fd %d\n", ft);
+		exit(100);
+	}
 	return (0);
 }
