@@ -24,11 +24,10 @@ int main(int ac, char **av)
 		exit(98);
 	}
 
-	i = read(fp, str, 1024);
+	i = read(fp, buffer, 1024);
 	if (i == -1)
 	{
 		dprintf(2, "Error: Can't read from %s\n", av[1]);
-		free(str);
 		close(fp);
 		exit (98);
 	}
@@ -40,7 +39,7 @@ int main(int ac, char **av)
 		exit (99);
 	}
 
-	j = write(ft, str, 1024);
+	j = write(ft, buffer, i);
 	if (j == -1 || j != i)
 	{
 		dprintf(2, "Error: Can't write to %s\n", av[2]);
