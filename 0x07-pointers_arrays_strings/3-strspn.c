@@ -33,6 +33,7 @@ unsigned int _strspn(char *s, char *accept)
 int _ischar(char c)
 {
 	int val = c;
+
 	if ((val > 96 && val < 124) || (val > 64 && val < 90))
 		return (1);
 	return (0);
