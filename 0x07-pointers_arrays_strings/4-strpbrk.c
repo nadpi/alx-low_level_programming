@@ -11,12 +11,12 @@ char *_strpbrk(char *s, char *accept)
 {
 	int min = 0, i, j, len = 0, k = 0;
 
-	while(s[k] != '\0')
+	while (s[k] != '\0')
 	{
 		len++;
 		k++;
 	}
-	
+
 	min = len;
 	for (i = 0; accept[i] != '\0'; i++)
 	{
@@ -33,5 +33,5 @@ char *_strpbrk(char *s, char *accept)
 			}
 		}
 	}
-	return(s + min);
+	return (s + min);
 }
