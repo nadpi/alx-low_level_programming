@@ -9,7 +9,7 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int min = 0, i, j, len = 0, k = 0;
+	int min = 0, i, j, len = 0, k = 0, flag = 0;
 
 	while (s[k] != '\0')
 	{
@@ -26,6 +26,7 @@ char *_strpbrk(char *s, char *accept)
 			{
 				if (j <= min)
 				{
+					flag = 1;
 					min = j;
 					break;
 
@@ -33,5 +34,7 @@ char *_strpbrk(char *s, char *accept)
 			}
 		}
 	}
+	if (flag == 0)
+		min = 0;
 	return (s + min);
 }
