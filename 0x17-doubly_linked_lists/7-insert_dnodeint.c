@@ -5,7 +5,7 @@
  * @h: head
  * @n: value
  * @idx: index
- * Return the address of the new node, or NULL if it failed
+ * Return: the address of the new node, or NULL if it failed
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
@@ -37,6 +37,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	curr->next = newNode;
 	newNode->next = temp;
 	newNode->prev = curr;
-	temp->prev = newNode;
+	if (temp)
+		temp->prev = newNode;
 	return (newNode);
 }
