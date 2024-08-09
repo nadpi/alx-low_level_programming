@@ -7,7 +7,7 @@
  */
 int is_prime_number(int n)
 {
-	return prime(n, 2, 0);
+	return (prime(n, 2, 0));
 }
 /**
  * prime - checks if prime
