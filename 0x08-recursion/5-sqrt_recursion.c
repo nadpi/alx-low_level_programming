@@ -14,6 +14,7 @@ int _sqrt_recursion(int n)
 /**
  * odd - odd
  * @n: number
+ * @oddn: oddn
  * Return: odd
  */
 int odd(int n, int oddn)
